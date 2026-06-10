@@ -20,7 +20,9 @@
 
   /* Hero form → POST /api/forms/submit (contact-us) */
   var apiMeta = document.querySelector('meta[name="lp-form-api"]');
+  var siteKeyMeta = document.querySelector('meta[name="lp-form-site-key"]');
   var submitUrl = (apiMeta && apiMeta.getAttribute('content')) || 'https://admin.pass11plusgrammar.co.uk/api/forms/submit';
+  var siteKey = (siteKeyMeta && siteKeyMeta.getAttribute('content')) || 'pass11';
 
   document.querySelectorAll('[data-lp-hero-form]').forEach(function (form) {
     var statusEl = form.querySelector('[data-lp-form-status]');
@@ -96,6 +98,7 @@
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
+          'x-site-key': siteKey,
         },
         body: JSON.stringify({ formId: formId, payload: payload }),
       })
