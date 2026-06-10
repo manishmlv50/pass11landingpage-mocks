@@ -20,7 +20,7 @@
 
   /* Hero form → POST /api/forms/submit (contact-us) */
   var apiMeta = document.querySelector('meta[name="lp-form-api"]');
-  var submitUrl = (apiMeta && apiMeta.getAttribute('content')) || 'https://pass11plusgrammar.co.uk/api/forms/submit';
+  var submitUrl = (apiMeta && apiMeta.getAttribute('content')) || 'https://admin.pass11plusgrammar.co.uk/api/forms/submit';
 
   document.querySelectorAll('[data-lp-hero-form]').forEach(function (form) {
     var statusEl = form.querySelector('[data-lp-form-status]');
